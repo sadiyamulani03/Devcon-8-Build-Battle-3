@@ -1,0 +1,3 @@
+@semaphore=lib/semaphore
+@zk-kit/lean-imt.sol=node_modules/@zk-kit/lean-imt.sol
+poseidon-solidity=lib/poseidon-solidity

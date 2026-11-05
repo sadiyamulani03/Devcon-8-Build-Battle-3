@@ -1,0 +1,30 @@
+{
+  "name": "nightshield",
+  "version": "1.0.0",
+  "description": "NightShield — Anonymous ward voting protocol built on Semaphore V4. Count Every Vote, Name No Voter.",
+  "private": true,
+  "engines": {
+    "node": ">=20.x"
+  },
+  "scripts": {
+    "install:client": "npm install",
+    "typecheck": "tsc --noEmit",
+    "lint": "npx eslint 'src/**/*.ts' --ext .ts 2>/dev/null || true",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc -p tsconfig.json",
+    "gen:proofs": "tsx scripts/generateTestProofs.ts"
+  },
+  "dependencies": {
+    "@semaphore-protocol/core": "^4.14.5",
+    "@semaphore-protocol/contracts": "^4.14.5",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@zk-kit/lean-imt.sol": "^2.0.1",
+    "typescript": "~5.6.0",
+    "vitest": "^2.0.0",
+    "tsx": "^4.0.0",
+    "eslint": "^8.0.0"
+  }
+}
