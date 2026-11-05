@@ -2,9 +2,9 @@ import {
   createWalletClient,
   http,
   getContract,
-  privateKeyToAccount,
   parseAbi,
 } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
 
 /**
  * Submits an anonymous vote on behalf of a nurse through a relayer.

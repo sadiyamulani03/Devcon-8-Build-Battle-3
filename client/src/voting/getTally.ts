@@ -16,7 +16,7 @@ export const TALLY_ABI = parseAbi([
 export type BallotStatus = "created" | "open" | "closed" | "finalized";
 
 export function statusToString(status: number): BallotStatus {
-  return [ "created", "open", "closed", "finalized" ][status] ?? "created";
+  return ([ "created", "open", "closed", "finalized" ][status] ?? "created") as BallotStatus;
 }
 
 export async function getTally({
@@ -41,7 +41,7 @@ export async function getTally({
   const contract = getContract({
     address: wardVotingAddress,
     abi: TALLY_ABI,
-    publicClient,
+    client: publicClient,
   });
 
   const [totalVotes, optionCounts, status, closingTime, groupId, scope] =

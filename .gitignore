@@ -28,6 +28,12 @@ dist/
 build/
 *.tsbuildinfo
 
+# Client build output emitted next to sources by tsc
+client/src/**/*.js
+client/src/**/*.js.map
+client/test/**/*.js
+client/test/**/*.js.map
+
 # IDE
 .vscode/
 .idea/

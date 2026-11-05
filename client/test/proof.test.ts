@@ -40,12 +40,15 @@ describe("client-side proof generation (Semaphore V4)", () => {
     // generateVoteProof throws if the message exceeds the scalar field.
     const scalarField =
       21888242871839275222246405745257275088548364400416034343698204186575808495617n;
+    // Number(scalarField) rounds down below the field, so use a value clearly
+    // above it to force an invalid ballot message.
+    const invalidOption = Number(scalarField) * 2;
     await expect(
       generateVoteProof({
         identity: idA,
         group,
         ballotScope: 1n,
-        option: Number(scalarField), // invalid as a sane option index
+        option: invalidOption,
       })
     ).rejects.toThrow();
   });

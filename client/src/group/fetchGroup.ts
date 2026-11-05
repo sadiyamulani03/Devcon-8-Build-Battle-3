@@ -42,7 +42,7 @@ export async function fetchGroup({
   const contract = getContract({
     address: wardVotingAddress,
     abi: WARD_VOTING_ABI,
-    publicClient,
+    client: publicClient,
   });
 
   const memberCount = (await contract.read.wardMemberCount()) as bigint;
